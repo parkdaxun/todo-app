@@ -4,16 +4,31 @@ import { StyleSheet, Text, View, Dimensions, TextInput, Platform} from 'react-na
 const {height, width} = Dimensions.get("window");
 
 export default function App() {
+  state = {
+    newToDo : ""
+  };
+
+  const {NewToDo} = this.state;
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
       <Text style={styles.title}>To Do List</Text>
       <View style={styles.card}>
-        <TextInput style={styles.input} placeholder={"New To Do"}/>
+        <TextInput
+         style={styles.input}
+         placeholder={"New To Do"} 
+         vaule = {newToDo} 
+         onChangeText={this._ControllNewToDo}/>
       </View>
     </View>
   );
 }
+_controlnewToDo = text => {
+  this.setState({
+    NewToDo : text
+  });
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -48,5 +63,13 @@ const styles = StyleSheet.create({
         elevation : 3
       }
     })
+  },
+  input : {
+    padding : 20,
+    borderBottomColor : "#bbb",
+    borderBottomWidth : 1,
+    fontSize : 20
+
+
   }
 });
