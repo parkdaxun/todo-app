@@ -5,7 +5,7 @@ const {height, width} = Dimensions.get("window");
 
 export default function App() {
   state = {
-    newToDo : ""
+    NewToDo : ""
   };
 
   const {NewToDo} = this.state;
@@ -18,7 +18,7 @@ export default function App() {
         <TextInput
          style={styles.input}
          placeholder={"New To Do"} 
-         vaule = {newToDo} 
+         vaule = {NewToDo} 
          onChangeText={this._ControllNewToDo}/>
       </View>
     </View>
