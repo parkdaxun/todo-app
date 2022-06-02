@@ -19,12 +19,15 @@ export default function App() {
          style={styles.input}
          placeholder={"New To Do"} 
          vaule = {NewToDo} 
-         onChangeText={this._ControllNewToDo}/>
+         onChangeText={this._controllNewToDo}
+         placeholderTextColor={"#999"}
+         returnkeytype={"done"}
+         />
       </View>
     </View>
   );
 }
-_controlnewToDo = text => {
+_controllNewToDo = text => {
   this.setState({
     NewToDo : text
   });
